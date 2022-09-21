@@ -8,7 +8,7 @@
 
 ./deploy_local_forklift_bazel.sh
 
-./k8s-deploy-kubevirt.sh
+./k8s_deploy_kubevirt.sh
 
 . ./grant_permissions.sh
 
