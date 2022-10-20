@@ -33,7 +33,7 @@ metadata:
 spec:
   selector:
     app: fakeovirt
-  type: NodePort
+  type: ClusterIP
   ports:
   - name: fakeovirt
     port: 12346
