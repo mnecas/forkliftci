@@ -1,0 +1,13 @@
+load(
+    "@io_bazel_rules_docker//container:container.bzl",
+    "container_push",
+)
+
+container_push(
+    name = "push-vddk-test",
+    format = "Docker",
+    image = "@cdi//containerized-data-importer-1.55.0/tools/vddk-test:vddk-test-image",
+    registry = "quay.io",
+    repository = "mnecas0/vddk-test-image",
+    tag = "devel",
+)
