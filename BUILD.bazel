@@ -6,8 +6,17 @@ load(
 container_push(
     name = "push-vddk-test",
     format = "Docker",
-    image = "@cdi//containerized-data-importer-1.55.0/tools/vddk-test:vddk-test-image",
+    image = "@cdi//tools/vddk-test:vddk-test-image",
     registry = "quay.io",
     repository = "mnecas0/vddk-test-image",
+    tag = "devel",
+)
+
+container_push(
+    name = "push-imageio-image",
+    format = "Docker",
+    image = "@cdi//tools/image-io:cdi-func-test-imageio-image",
+    registry = "quay.io",
+    repository = "mnecas0/vddk-imageio-image",
     tag = "devel",
 )
