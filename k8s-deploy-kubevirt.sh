@@ -3,7 +3,7 @@
 set -ex
 
 # Install CDI
-export CDI_VERSION=$(curl -s https://api.github.com/repos/kubevirt/containerized-data-importer/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+export CDI_VERSION=v1.55.0
 kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$CDI_VERSION/cdi-operator.yaml
 kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$CDI_VERSION/cdi-cr.yaml
 
@@ -15,7 +15,7 @@ kubectl apply -f https://github.com/kubevirt/cluster-network-addons-operator/rel
 kubectl apply -f https://github.com/kubevirt/cluster-network-addons-operator/releases/download/$CNA_VERSION/operator.yaml
 
 # Install kubevirt
-export VIRT_VERSION=v0.57.1
+export VIRT_VERSION=v0.58.0
 #$(curl -s https://api.github.com/repos/kubevirt/kubevirt/releases | grep tag_name | grep -v -- '-rc' | sort -r | head -1 | awk -F': ' '{print $2}' | sed 's/,//' | xargs)
 kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${VIRT_VERSION}/kubevirt-operator.yaml
 kubectl create -f https://github.com/kubevirt/kubevirt/releases/download/${VIRT_VERSION}/kubevirt-cr.yaml
