@@ -45,6 +45,8 @@ jobs:
 
       - run: kubectl get pods -n konveyor-forklift
 
+      - run: sleep 120
+
       - run: kubectl get providers -n konveyor-forklift -o yaml
 
       - run: kubectl get migrations -n konveyor-forklift -o yaml
